@@ -5,3 +5,11 @@ include_recipe 'jenkins::master'
 jenkins_plugin 'git' do
   notifies :restart, 'service[jenkins]', :delayed
 end
+
+jenkins_plugin 'chef-identity' do
+  notifies :restart, 'service[jenkins]', :delayed
+end
+
+jenkins_plugin 'rvm' do
+  notifies :restart, 'service[jenkins]', :delayed
+end
