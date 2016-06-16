@@ -4,4 +4,4 @@ file '/var/lib/jenkins/.ssh/id_rsa' do
   mode '0400'
   owner 'jenkins'
   action :nothing
-end.run_action(:create)
+end

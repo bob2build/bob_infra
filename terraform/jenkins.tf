@@ -10,7 +10,28 @@ provider "aws" {
     region = "${var.region}"
 }
 
+resource "aws_security_group" "allow_all" {
+  name = "allow_all"
+  description = "Allow all inbound traffic"
+
+  ingress {
+      from_port = 0
+      to_port = 0
+      protocol = "-1"
+      cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+      from_port = 0
+      to_port = 0
+      protocol = "-1"
+      cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
 resource "aws_instance" "example" {
     ami = "ami-d2c924b2"
-    instance_type = "t2.micro"
+    instance_type = "t2.medium"
+    key_name = "bob2build"
+    security_groups = ["allow_all"]
 }

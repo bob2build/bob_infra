@@ -1,0 +1,8 @@
+{
+  "run_list": [
+     "recipe[bob_jenkins::default]"
+  ],
+  "automatic": {
+    "ipaddress": "54.213.233.132"
+  }
+}

@@ -1,3 +1,4 @@
+node.set['jenkins']['master']['version'] = '1.658-1.1'
 # Install jenkins master with default behaviour
 include_recipe 'jenkins::master'
 
